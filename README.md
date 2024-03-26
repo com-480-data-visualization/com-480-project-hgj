@@ -25,9 +25,31 @@ Please, fill the following sections about your project.
 
 ### Problematic
 
-> Frame the general topic of your visualization and the main axis that you want to develop.
-> - What am I trying to show with my visualization?
-> - Think of an overview for the project, your motivation, and the target audience.
+**Overview**
+
+Our project aims to serve as a comprehensive resource hub for Counter-Strike 2(previously CS:GO) enthusiasts, providing informative, interesting and interactive visualizations into top players, weapon statistics, map statistics, and professional match analyses. 
+
+**Motivation**
+
+As one of the most popular first-person shooter(FPS) video game, Counter-Strike has become a cornerstone of the esports community since its initial release in 1999. It is a true milestone in FPS game history, which has a large influence on more than one generation of FPS game fans. However, there’s no existing website that meets the need to have informative, interesting and interactive visualizations of the game. There are relevant statistics on HLTV(hltv.org) and statistics dataset existing, but the information needs data mining and the results need to be presented in a more attractive and easy-to-understand way. Therefore, we find it meaningful to do a related project on it.
+
+**Target Audience**
+
+The target audience is anyone interested in Counter-Strike 2. We strive to cater to the needs of both casual players exploring information of the game in an attractive way and hardcore fans looking to find detailed statistics of the game.
+
+**Content**
+
+At this stage, we decide to have three main parts as following:
+
+> - **Top 20 players overview:**
+Every year, HLTV announces the top 20 professional players of the year based on their playing statistics and honor they receive within the year. We will have a visualization of the top 20 players in six dimensions(RATING, DPR, KAST, IMPACT, ADR, KPA) comparing with average levels. There will be a timeline for each years’ data. And interesting way to look for each player(still to be decided, maybe related to team and nationalities on map).
+
+> - **Weapon statistics:**
+In this section we will present statistics of all the weapons in the game including damage, total kills, headshot rate etc. A character will be there and when you put your mouse on each body part of him/her, the relevant data will be shown. 
+
+> - **Professional matches’ statistics on each mapL**
+In this part, the statistics(Win rate, ban/pick rate etc.) of each map and each side(T and CT) will be visualized with a timeline of years. You will also get a glimpse of the difference of different countries/continents’ professional players and teams’ performance on the statistics.
+
 
 ### Exploratory Data Analysis
 

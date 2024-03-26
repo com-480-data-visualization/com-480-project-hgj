@@ -60,7 +60,7 @@ In this part, the statistics(Win rate, ban/pick rate etc.) of each map and each 
 
 As stated above, there’s no website that perfectly meets the need of providing informative, interesting and interactive visualizations of the Counter-Strike statistics. HLTV is a news website and forum which covers professional Counter-Strike 2 esports news, tournaments and statistics. It is one of the leading websites within the Counter-Strike community with thorough and detailed statistics. It is informative enough, but not interesting and interactive. It is more like a display of pure data instead of data visualization. Bo3.gg is another similar case with news and simple display of the statistics. 
 
-Other than websites, there are some videos doing some visualization of the statistics. For example this video on [bilibili](https://www.bilibili.com/video/BV1YK411Y7j9/?share_source=copy_web&vd_source=1a80d0a287810aaed54bd1722292da14) has a very good visualization of the top 20 players in 2023, which gives us inspirations. 
+Other than websites, there are some videos doing some visualization of the statistics. For example [this](https://www.bilibili.com/video/BV1YK411Y7j9/?share_source=copy_web&vd_source=1a80d0a287810aaed54bd1722292da14) video on bilibili has a very good visualization of the top 20 players in 2023, which gives us inspirations. 
 
 And just to clarify, we did not use any of the dataset before in other courses.
 

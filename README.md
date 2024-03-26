@@ -19,7 +19,7 @@ Please, fill the following sections about your project.
 
 ### Dataset
 
-CS:GO is a multiplayer first-person shooter online competitive game. The dataset we will be using has collected the results of a total of 27,245 professional CS:GO matches from November 2015 to March 2020. 
+Counter-Strike 2(previously CS:GO) is a multiplayer first-person shooter online competitive game. The dataset we will be using has collected the results of a total of 27,245 professional CS matches from November 2015 to March 2020. 
 
 The dataset consists of 4 tables: 
 
@@ -30,7 +30,9 @@ The dataset consists of 4 tables:
 
 This dataset is exceptionally clean with minimal missing data. [Here](https://www.kaggle.com/datasets/mateusdmachado/csgo-professional-matches) is the link.
 
-We are also interested in the data about the weapon in CS:GO, such as weapon selection, win rate. So we may use [this](https://www.kaggle.com/datasets/computingvictor/counter-strike-2-statistic) dataset as complementary dataset.
+We are also interested in the data about the weapon in the game, such as weapon damage, win rate. So we will use the weapon_statistics.csv in [this](https://www.kaggle.com/datasets/computingvictor/counter-strike-2-statistic) dataset as well.
+
+Except for the collected datasets, [HLTV](https://www.hltv.org/) will be the main resource that we will have the other information from.
 
 ### Problematic
 

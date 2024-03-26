@@ -4,7 +4,7 @@
 | -------------- | ------ |
 | Gerard Elias Antoun | 296102 |
 | Haochen Su | 360059 |
-| Jiaxin Dong |  |
+| Jiaxin Dong | 367788 |
 
 [Milestone 1](#milestone-1) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
 

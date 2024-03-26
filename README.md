@@ -62,6 +62,8 @@ As stated above, there’s no website that perfectly meets the need of providing
 
 Other than websites, there are some videos doing some visualization of the statistics. For example [this](https://www.bilibili.com/video/BV1YK411Y7j9/?share_source=copy_web&vd_source=1a80d0a287810aaed54bd1722292da14) video on bilibili has a very good visualization of the top 20 players in 2023, which gives us inspirations. 
 
+Our project would be original because it includes multiple statistics in an informative, interesting and interactive way instead of just presenting it. And unlike other Counter-Strike related websites, we will only focus on statistics without presenting news on it. 
+
 And just to clarify, we did not use any of the dataset before in other courses.
 
 ## Milestone 2 (26th April, 5pm)

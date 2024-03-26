@@ -10,7 +10,6 @@
 
 ## Milestone 1 (29th March, 5pm)
 
-*(max. 2000 characters per section)*
 
 ### Dataset
 

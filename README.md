@@ -4,16 +4,11 @@
 | -------------- | ------ |
 | Gerard Elias Antoun | 296102 |
 | Haochen Su | 360059 |
-| | |
+| Jiaxin Dong |  |
 
 [Milestone 1](#milestone-1) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
 
 ## Milestone 1 (29th March, 5pm)
-
-**10% of the final grade**
-
-This is a preliminary milestone to let you set up goals for your final project and assess the feasibility of your ideas.
-Please, fill the following sections about your project.
 
 *(max. 2000 characters per section)*
 
@@ -64,8 +59,7 @@ In this part, the statistics(Win rate, ban/pick rate etc.) of each map and each 
 
 ### Exploratory Data Analysis
 
-> Pre-processing of the data set you chose
-> - Show some basic statistics and get insights about the data
+Please refer to the jupyter notebook.
 
 ### Related work
 

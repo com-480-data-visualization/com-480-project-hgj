@@ -19,9 +19,18 @@ Please, fill the following sections about your project.
 
 ### Dataset
 
-> Find a dataset (or multiple) that you will explore. Assess the quality of the data it contains and how much preprocessing / data-cleaning it will require before tackling visualization. We recommend using a standard dataset as this course is not about scraping nor data processing.
->
-> Hint: some good pointers for finding quality publicly available datasets ([Google dataset search](https://datasetsearch.research.google.com/), [Kaggle](https://www.kaggle.com/datasets), [OpenSwissData](https://opendata.swiss/en/), [SNAP](https://snap.stanford.edu/data/) and [FiveThirtyEight](https://data.fivethirtyeight.com/)), you could use also the DataSets proposed by the ENAC (see the Announcements section on Zulip).
+CS:GO is a multiplayer first-person shooter online competitive game. The dataset we will be using has collected the results of a total of 27,245 professional CS:GO matches from November 2015 to March 2020. 
+
+The dataset consists of 4 tables: 
+
+> - **result.csv:** Includes match ID, world rankings of the competing teams, score results, and the winning team for each match.
+> - **players.csv:** Contains personal information of players from both teams and their in-game statistics such as kills, assists, deaths, etc.
+> - **map.csv:** Provides data on the map banning process for each match.
+> - **economy.csv:** Presents the economic data of both teams for each match.
+
+This dataset is exceptionally clean with minimal missing data. [Here](https://www.kaggle.com/datasets/mateusdmachado/csgo-professional-matches) is the link.
+
+We are also interested in the data about the weapon in CS:GO, such as weapon selection, win rate. So we may use [this](https://www.kaggle.com/datasets/computingvictor/counter-strike-2-statistic) dataset as complementary dataset.
 
 ### Problematic
 

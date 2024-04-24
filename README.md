@@ -72,7 +72,7 @@ And just to clarify, we did not use any of the dataset before in other courses.
 
 ## Milestone 2 (26th April, 5pm)
 
-**10% of the final grade**
+Our Milestone2 report is [here](https://github.com/com-480-data-visualization/com-480-project-hgj/blob/master/Milestone2.pdf)
 
 
 ## Milestone 3 (31st May, 5pm)

@@ -72,8 +72,9 @@ And just to clarify, we did not use any of the dataset before in other courses.
 
 ## Milestone 2 (26th April, 5pm)
 
-Our Milestone2 report is [here](https://github.com/com-480-data-visualization/com-480-project-hgj/blob/master/Milestone2.pdf)
+Our Milestone 2 report is [here](https://github.com/com-480-data-visualization/com-480-project-hgj/blob/master/Milestone2.pdf)
 
+And the skeleton is published on GitHub Pages with this URL: [https://com-480-data-visualization.github.io/com-480-project-hgj/](https://com-480-data-visualization.github.io/com-480-project-hgj/)
 
 ## Milestone 3 (31st May, 5pm)
 

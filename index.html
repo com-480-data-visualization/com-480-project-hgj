@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/favicon.ico">
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/top_players.css">
     <title>Counter-Strike Data Visualization</title>
 </head>
 
@@ -55,12 +56,26 @@
         <div class="row row-viz1" id="row-viz1">
             <div class="inner-row inner-row-viz1">
                 <div class="viz1-section-title-ctr section-title-ctr">
-                    <h2 class="viz1-section-title section-title">VISUALIZATION-I</h2>
+                    <h2 class="viz1-section-title section-title">Top 10 Players Over The Years</h2>
                 </div>
                 <div class="viz1-card viz1-card-discussions">
                     <div class="viz1-visualization-ctr">
-                        <span>Visualization 1</span>
+                        <div class="viz1-section" id="viz1-mvp"></div>
+                        <div class="viz1-section" id="viz1-evp"></div>
+                        <div class="viz1-section" id="players-spider-chart"></div>
+                        <div class="viz1-section" id="viz1-1st"></div>
+                        <div class="viz1-section" id="viz1-2nd"></div>
+                        <div class="viz1-section" id="viz1-3rd"></div>
+                        <div class="viz1-section" id="viz1-notable-stats"></div>
+                        <div class="viz1-section" id="viz1-player-profile"></div>
+                        <div id="player-selection-carousel">
+                            
+                        </div>
+                        <div class="button-container">
+                            <button id="update-button">Update Data</button>
+                        </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -108,6 +123,9 @@
     </div>
     <script src="js/dom.js"></script>
     <script src="js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="js/spiderChart.js"></script> 
+    <script src="js/top_players.js"></script>
 </body>
 
 </html>

@@ -17,7 +17,7 @@ class SpiderChart {
 
     formatAxisLabel(axis, value) {
         let formattedValue = value;
-        switch(axis) {
+        switch (axis) {
             case "Surviving":
                 formattedValue = (value * 100).toFixed(0) + "%"; // e.g., 0.38 -> 38%
                 break;
@@ -42,7 +42,7 @@ class SpiderChart {
         const axisGrid = svg.append("g").attr("class", "axisWrapper");
 
         axisGrid.selectAll(".levels")
-            .data(d3.range(1, (this.levels + 1)).reverse())
+            .data(d3.range(1, this.levels + 1).reverse())
             .enter()
             .append("circle")
             .attr("class", "gridCircle")
@@ -75,7 +75,6 @@ class SpiderChart {
             .attr("text-anchor", "middle")
             .text(d => d.axis)
             .style("fill", "orange");
-            
 
         axis.append("text")
             .attr("class", "axisValue")
@@ -104,11 +103,14 @@ class SpiderChart {
         radarAreas.enter()
             .append("path")
             .attr("class", "radarArea")
+            .merge(radarAreas)  // Merge the enter and update selections
             .attr("d", this.radarLine)
             .style("fill", (d, i) => this.color(i))
             .style("fill-opacity", 0.2)
             .style("stroke", (d, i) => this.color(i))
             .style("stroke-width", "3px");
+
+        radarAreas.exit().remove();  // Remove any old data elements
 
         this.radarAreas = radarAreas;
     }
@@ -119,25 +121,32 @@ class SpiderChart {
         this.radarAreas = this.svg.selectAll(".radarArea")
             .data(data);
 
-        this.radarAreas.transition()
+        this.radarAreas.enter()
+            .append("path")
+            .attr("class", "radarArea")
+            .merge(this.radarAreas)
+            .transition()
             .duration(1000)
             .attr("d", this.radarLine)
             .style("fill", (d, i) => this.color(i))
             .style("stroke", (d, i) => this.color(i));
 
-        // Update axis labels and values
-        this.axis.selectAll(".axisLabel")
-            .data(this.average)
+        this.radarAreas.exit().remove();
+
+        // Define the key function
+        function keyFunction(d, i) {
+            return d.axis; // Assuming 'axis' is unique for each element
+        }
+
+        // Update axis values with a key function
+        this.axis.selectAll(".axisValue")
+            .data(playerData, keyFunction) // Re-bind playerData with a key function
             .transition()
             .duration(1000)
-            .text(d => d.axis)
+            .text((d, i) => {
+                return this.formatAxisLabel(this.average[i].axis, d.value); // Access d.value correctly
+            })
             .style("fill", "orange");
-            
-            this.axis.selectAll(".axisValue")
-            .data(playerData)
-            .transition()
-            .duration(1000)
-            .text(d => this.formatAxisLabel(d.axis, d.value))
-            .style("fill", "orange");
+
     }
 }

@@ -185,3 +185,42 @@
   border-bottom: 1px solid rgb(61, 58, 58);
   margin-bottom:5px;
 }
+
+/* Player Selection */
+#player-selection-carousel{
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-gap: 15px;
+}
+
+.player-card{
+  height:200px;
+  box-shadow: 0px 0px 3px 1px #dbdbdb;  
+  position:relative;
+  color:red;
+  border-radius: 10px;
+  overflow: hidden;
+
+  cursor: pointer;
+}
+
+.player-card:hover{
+  box-shadow: 0px 0px 7px 5px #ffae00;  
+  transition: 0.5s;
+}
+
+.selected-player-card{
+  box-shadow: 0px 0px 5px 3px #ffae00;  
+}
+
+.player-card-img{
+  height:100%;
+  position:absolute;
+}
+
+.player-card-info{
+  position:absolute;
+  bottom:5px;
+  left:5px;
+  font-family: montserrat-regular;
+}

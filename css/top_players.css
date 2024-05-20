@@ -1,0 +1,187 @@
+.viz1-card {
+  background-color: rgb(20, 20, 20);
+}
+
+.viz1-section-explanation {
+  font-family: lgc-regular;
+  text-align: center;
+}
+
+.viz1-visualization-ctr {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  font-family: montserrat-regular;
+}
+
+.viz1-visualization-ctr {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "mvp spc spc ppf"
+    "evp spc spc ppf"
+    "ach ach ach ppf"
+    "stt stt stt ppf";
+  grid-gap: 10px;
+}
+
+.viz1-section {
+  height: 100%;
+  width: 100%;
+  min-height: 120px;
+  border: 2px solid rgb(24, 24, 34);
+}
+
+.viz1-section:hover {
+  border: 2px solid rgb(61, 58, 58);
+  transition: 0.5s;
+}
+
+#viz1-mvp {
+  grid-area: mvp;
+}
+#viz1-evp {
+  grid-area: evp;
+}
+#player-stats {
+  grid-area: spc;
+}
+#viz1-notable-stats {
+  grid-area: stt;
+}
+#viz1-player-profile {
+  grid-area: ppf;
+}
+
+#viz1-notable-team-achievements {
+  grid-area: ach;
+  display: flex;
+  flex-direction: column;
+}
+
+.viz1-notable-achievements-lists-ctr {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+#viz1-notable-team-achievements-1st {
+}
+#viz1-notable-team-achievements-2nd {
+}
+#viz1-notable-team-achievements-3rd {
+}
+
+#notable-stats-list{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  max-height: 155px;
+  overflow-y: auto;
+  font-size: 14px;
+}
+
+.viz1-section {
+  font-family: lgc-regular;
+  color: rgb(230, 230, 230);
+  padding: 10px;
+  background-color: rgb(29, 29, 29);
+  border-radius: 10px;
+}
+
+
+.viz1-section-title-ctr{
+  margin:0px;
+  margin-bottom:5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.viz1-section-title {
+  font-family: montserrat-bold;
+  margin: 0px;
+}
+
+.viz1-card ul{
+  padding: 0px;
+}
+
+.viz1-card li{
+  list-style-type: none;
+  padding:none;
+}
+
+/* Section */
+#viz1-player-profile{
+  padding:0px;
+  width: 350px;
+  overflow: hidden;
+}
+
+.player-profile-ctr{
+  position: relative;
+}
+
+.viz1-player-profile-img{
+  position:absolute;
+}
+
+.player-profile-ctr{
+  height:100%;
+}
+.player-profile-ctr img{
+  height:100%;
+}
+
+.player-name-ctr{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-family: lgc-regular;
+  font-size: 1em;
+}
+
+#player-username{
+  font-family: montserrat-regular;
+  margin:0px;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+#player-country{
+  position:absolute;
+  bottom:20px;
+  right:20px;
+  font-family: montserrat-regular;
+  margin:0px;
+  font-size: 1.2em;
+}
+
+.player-info-ctr {
+  text-align: left;
+  position:absolute;
+  bottom:20px;
+  left:20px;
+}
+
+#player-rank {
+  font-size: 3em;
+  font-weight: bold;
+}
+
+#player-team {
+  font-size: 1.2em;
+  font-weight: normal;
+}
+
+.viz1-notable-team-achievement-title{
+  font-family: montserrat-bold;
+  margin:0px;
+  font-size: 1.1em;
+  border-bottom: 1px solid rgb(61, 58, 58);
+  margin-bottom:5px;
+}

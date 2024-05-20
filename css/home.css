@@ -69,6 +69,8 @@ body{
     position:fixed;
 
     height:61.5px;
+
+    z-index: 1000;
 }
 
 /* ---------------------------------  
@@ -144,7 +146,7 @@ body{
 }
 
 .nav-link:hover{
-    color:rgb(52,109,242);
+    color:#eea300;
 }
 
 /* ---------------------------------  
@@ -153,11 +155,12 @@ body{
 
 .row-welcome{
     padding-top:60px;
-    background-image:url("../images/gradient-background.svg"); 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    background: rgb(20,20,20);
+    background: -moz-linear-gradient(48deg, rgba(20,20,20,1) 0%, rgba(20,20,20,1) 62%, rgba(74,53,10,1) 85%, rgba(113,87,29,1) 100%);
+    background: -webkit-linear-gradient(48deg, rgba(20,20,20,1) 0%, rgba(20,20,20,1) 62%, rgba(74,53,10,1) 85%, rgba(113,87,29,1) 100%);
+    background: linear-gradient(48deg, rgba(20,20,20,1) 0%, rgba(20,20,20,1) 62%, rgba(74,53,10,1) 85%, rgba(113,87,29,1) 100%);
+
+    margin-bottom:50px;
 }
 
 .inner-row-welcome{
@@ -170,6 +173,7 @@ body{
 
 .welc-txt-and-btn-ctr{
     width:100%;
+    color:rgb(243, 243, 243);
 }
 
 .welc-title{
@@ -186,7 +190,7 @@ body{
 }
 
 .welc-btn{
-    background: linear-gradient(90deg, rgba(52,109,242,1) 0%, rgba(4,139,231,1) 100%);
+    background: linear-gradient(90deg, rgb(242, 160, 52) 0%, #e79f04 100%);
     font-family:lgc-regular;
     color:#fff;
     border:none;
@@ -231,7 +235,6 @@ body{
 
 
 .viz1-title-subtitle-ctr{
-    
     grid-area:title;
     display: flex;
     flex-direction: column;
@@ -247,19 +250,6 @@ body{
     margin:0;
     font-size: 40px;
     font-family: montserrat-bold;
-}
-
-.viz1-visualization-ctr{
-    height:500px;
-    width:100%;
-    
-    display:flex;
-    align-items: center;
-    justify-content: center;
-
-    background-color: #5D6978;
-    color:white;
-    font-family: montserrat-regular;
 }
 
 /* ---------------------------------  
@@ -303,16 +293,17 @@ body{
 
 .row-viz3{
     margin-top: 40px;
+    background-color: rgb(20, 20, 20);
 }
 .viz3-section-title-ctr{
     display:flex;
     align-items: center;
     justify-content:center;
+    color: white;
     
 }
 
 .inner-row-viz3{
-    background-image: url("../images/gradient-background.svg");
 
     border-radius: 30px;
 

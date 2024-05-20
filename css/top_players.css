@@ -49,7 +49,12 @@
 }
 #player-stats {
   grid-area: spc;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
+
 #viz1-notable-stats {
   grid-area: stt;
 }
@@ -197,7 +202,7 @@
   height:200px;
   box-shadow: 0px 0px 3px 1px #dbdbdb;  
   position:relative;
-  color:red;
+  color:white;
   border-radius: 10px;
   overflow: hidden;
 
@@ -223,4 +228,9 @@
   bottom:5px;
   left:5px;
   font-family: montserrat-regular;
+
+  background: rgb(0,0,0);
+  background: -moz-linear-gradient(30deg, rgba(0,0,0,1) 48%, rgba(20,20,20,0) 81%);
+  background: -webkit-linear-gradient(30deg, rgba(0,0,0,1) 48%, rgba(20,20,20,0) 81%);
+  background: linear-gradient(30deg, rgba(0,0,0,1) 48%, rgba(20,20,20,0) 81%);
 }

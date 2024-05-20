@@ -69,10 +69,35 @@ class SpiderChart {
         axis.append("text")
             .attr("class", "axisLabel")
             .attr("x", (d, i) => this.radius * 1.1 * Math.cos(this.angleSlice * i - Math.PI / 2))
-            .attr("y", (d, i) => this.radius * 1.1 * Math.sin(this.angleSlice * i - Math.PI / 2))
+            .attr("y", (d, i) => {
+                const y = this.radius * 1.1 * Math.sin(this.angleSlice * i - Math.PI / 2);
+                if(d.axis === "KPR"){
+                    return y - 16
+                }
+                return y
+            })
+            
             .attr("dy", "0.35em")
             .style("font-size", "16px")
-            .attr("text-anchor", "middle")
+            .attr("text-anchor", (d) => {
+                switch (d.axis) {
+                    case "Surviving":
+                        return "start";
+                        break;
+                    case "ADR":
+                        return "start";
+                        break;
+                    case "Impact":
+                        return "end";
+                        break;
+                    case "Rating":
+                        return "end";
+                        break;
+                    default:
+                        return "middle";
+                        break;
+                }
+            })
             .text(d => d.axis)
             .style("fill", "orange");
 
@@ -80,10 +105,35 @@ class SpiderChart {
             .attr("class", "axisValue")
             .attr("x", (d, i) => this.radius * 1.1 * Math.cos(this.angleSlice * i - Math.PI / 2))
             .attr("y", (d, i) => this.radius * 1.1 * Math.sin(this.angleSlice * i - Math.PI / 2) + 16) // Positioning below the label
+            .attr("y", (d, i) => {
+                const y = this.radius * 1.1 * Math.sin(this.angleSlice * i - Math.PI / 2) + 16; // Positioning below the label
+                if(d.axis === "KPR"){
+                    return y - 16
+                }
+                return y
+            })
             .attr("dy", "0.35em")
             .style("font-size", "14px")
             .style("fill", "orange")
-            .attr("text-anchor", "middle")
+            .attr("text-anchor",(d) => {
+                switch (d.axis) {
+                    case "Surviving":
+                        return "start";
+                        break;
+                    case "ADR":
+                        return "start";
+                        break;
+                    case "Impact":
+                        return "end";
+                        break;
+                    case "Rating":
+                        return "end";
+                        break;
+                    default:
+                        return "middle";
+                        break;
+                }
+            })
             .text((d, i) => this.formatAxisLabel(d.axis, this.playerData[i].value));
 
         this.svg = svg;

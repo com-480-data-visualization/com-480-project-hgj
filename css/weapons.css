@@ -2,3 +2,46 @@
   font-family: lgc-regular;
   text-align: center;
 }
+
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+/* Grid styling */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.grid img {
+    width: 140px;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+/* Chart container styling */
+.chart-container {
+    display: none;
+    text-align: center;
+}
+
+.chart-container img {
+    margin: 10px;
+}
+
+.back-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}

@@ -291,16 +291,10 @@ body{
             VIZUALIZATION 3
 --------------------------------- */
 
-.row-viz3{
-    margin-top: 40px;
-    background-color: rgb(20, 20, 20);
-}
 .viz3-section-title-ctr{
     display:flex;
     align-items: center;
     justify-content:center;
-    color: white;
-    
 }
 
 .inner-row-viz3{
@@ -320,7 +314,7 @@ body{
     align-items: center;
     justify-content: center;
 
-    background-color: #5D6978;
+    background-color: #ffffff;
     color:white;
     font-family: montserrat-regular;
 }

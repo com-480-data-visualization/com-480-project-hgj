@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/home.css" />
     <link rel="stylesheet" href="css/top_players.css" />
     <link rel="stylesheet" href="css/weapons.css" />
+    <link rel="stylesheet" href="css/maps.css" />
     <title>Counter-Strike Data Visualization</title>
   </head>
 
@@ -310,11 +311,27 @@
       <div class="row row-viz3" id="row-viz3">
         <div class="inner-row inner-row-viz3">
           <div class="viz3-section-title-ctr">
-            <h2 class="viz3-section-title section-title">VISUALIZATION-III</h2>
+            <h2 class="viz3-section-title section-title">Map Statistics</h2>
           </div>
-          <div class="viz3-visualization-ctr">
-            <span>Visualization 3</span>
-          </div>
+          <section class="controls">
+            <label for="team-select">Select Team:</label>
+            <div class="custom-select">
+              <select id="team-select">
+              </select>
+            </div>
+          </section>
+          <section class="viz3-visualization-ctr">
+            <div id="my_dataviz">
+            </div>
+            <div class="timeline">
+              <input type="range" id="year-slider" min="2015" max="2020" step="1" value="2020">
+              <span id="selected-year">2020</span>
+            </div>
+          </section>
+          <section class="ban-rate">
+              <h3>Most Disliked Maps</h3>
+              <ul id="ban-list"></ul>
+          </section>
         </div>
       </div>
       <div class="row row-footer">
@@ -341,5 +358,6 @@
     <script src="js/top_players.js"></script>
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script src="js/weapons.js"></script>
+    <script src="js/maps.js"></script>
   </body>
 </html>

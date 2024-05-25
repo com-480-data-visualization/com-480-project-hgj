@@ -9,7 +9,7 @@ const average = [
 ];
 
 const state = {
-  selectedYear: "2020",
+  selectedYear: "2018",
   selectedPlayer: 0,
   data: null,
   spiderChart: null,
@@ -44,9 +44,8 @@ const dom_2nd = document.getElementById("viz1-notable-team-achievements-2nd");
 const dom_3rd = document.getElementById("viz1-notable-team-achievements-3rd");
 const dom_notableStats = document.getElementById("notable-stats-list");
 const dom_playerProfile = document.getElementById("viz1-player-profile");
-const dom_playerSelectionCarousel = document.getElementById(
-  "player-selection-carousel"
-);
+const dom_playerSelectionCarousel = document.getElementById("player-selection-carousel");
+const dom_yearSelection = document.getElementById("viz1-year-select");
 
 const dom_playerRank = document.getElementById("player-rank");
 const dom_playerName = document.getElementById("player-name");
@@ -56,6 +55,9 @@ const dom_playerUsername = document.getElementById("player-username");
 const dom_playerImg = document.getElementById("player-profile-img");
 
 
+dom_yearSelection.onchange = (event) => {
+  state.updateYear(event.target.value);
+};
 
 // Initial Data Fetch
 fetch("/data/top_players.json")
@@ -127,6 +129,11 @@ const updatePlayerInfo = (player) => {
 };
 
 const updatePlayerCards = (data, year) => {
+  // delete all player cards
+  while (dom_playerSelectionCarousel.firstChild) {
+    dom_playerSelectionCarousel.removeChild(dom_playerSelectionCarousel.firstChild);
+  }
+
   const playersList = data[year];
 
   playersList.forEach((player) => {
@@ -175,3 +182,4 @@ const transformRawPlayerStats = (rawStats) => {
     { axis: "Rating", value: rawStats["rating"] / 2 },
   ];
 };
+

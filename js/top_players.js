@@ -60,7 +60,7 @@ dom_yearSelection.onchange = (event) => {
 };
 
 // Initial Data Fetch
-fetch("../data/top_players.json")
+fetch("/com-480-project-hgj/data/top_players.json")
   .then((response) => response.json())
   .then((data) => {
     // Update the player profile

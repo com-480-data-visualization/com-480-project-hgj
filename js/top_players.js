@@ -125,7 +125,7 @@ const updatePlayerInfo = (player) => {
   dom_playerTeam.innerHTML = player["team"];
   dom_playerCountry.innerHTML = player["country"] ? player["country"] : "";
   dom_playerUsername.innerHTML = player["username"];
-  dom_playerImg.src = `images/players/${player["username"]}.png`;
+  dom_playerImg.src = `images/players/${player["username"].toLowerCase()}.png`;
 };
 
 const updatePlayerCards = (data, year) => {
@@ -149,7 +149,7 @@ const updatePlayerCards = (data, year) => {
 
     playerCard.innerHTML = `
     <img
-      src="images/players/${player["username"]}.png"
+      src="images/players/${player["username"].toLowerCase()}.png"
       alt="Player Image"
       class="player-card-img"
       id="player-card-img-${player["rank"]}"

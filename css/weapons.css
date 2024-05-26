@@ -10,16 +10,35 @@ h1, h2 {
 /* Grid styling */
 .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(5, 1fr); /* Adjusted to fit five images per row */
+    gap: 5px; /* Reduced gap between images */
     margin-bottom: 20px;
 }
 
 .grid img {
-    width: 140px;
+    width: 120px; /* Adjust width to fit better within five columns */
     height: 100px;
     object-fit: cover;
     cursor: pointer;
+}
+
+.weapon-container {
+    text-align: center;
+}
+
+.weapon-container img {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.weapon-name {
+    margin-top: 5px;
+    font-family: 'Arial', sans-serif; /* Example font, you can choose another */
+    font-size: 14px;
+    font-weight: bold;
+    color: #eb8c34;
 }
 
 /* Chart container styling */
@@ -28,14 +47,32 @@ h1, h2 {
     text-align: center;
 }
 
+.chart-and-image {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; /* Center the content horizontally */
+}
+
 .chart-container img {
     margin: 10px;
+}
+
+#pistolsStaticImage, #SMGsStaticImage, #RiflesStaticImage, #HeaviesStaticImage {
+    width: 150px;
+    height: 300px; /* Increased height of static images */
+    margin-left: 20px;
+}
+
+#pistolsSelectedImage, #SMGsSelectedImage, #RiflesSelectedImage, #HeaviesSelectedImage{
+    width: 180px;
+    height: 150px; /* Increased height of static images */
 }
 
 .back-button {
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #007BFF;
+    background-color: #eb8c34;
     color: white;
     border: none;
     cursor: pointer;
@@ -43,5 +80,5 @@ h1, h2 {
 }
 
 .back-button:hover {
-    background-color: #0056b3;
+    background-color: #eb8c34;
 }

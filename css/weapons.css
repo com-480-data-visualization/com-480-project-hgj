@@ -1,6 +1,5 @@
 .viz2-section-explanation {
   font-family: lgc-regular;
-  text-align: center;
 }
 
 h1, h2 {
@@ -58,7 +57,7 @@ h1, h2 {
     margin: 10px;
 }
 
-#pistolsStaticImage, #SMGsStaticImage, #RiflesStaticImage, #HeaviesStaticImage {
+#PistolsStaticImage, #SMGsStaticImage, #RiflesStaticImage, #HeaviesStaticImage {
     width: 150px;
     height: 300px; /* Increased height of static images */
     margin-left: 20px;
@@ -81,4 +80,59 @@ h1, h2 {
 
 .back-button:hover {
     background-color: #eb8c34;
+}
+
+
+.comparison-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.selector {
+    margin: 0 10px;
+}
+
+button {
+    margin: 0 10px;
+}
+
+
+
+.comparison-image-container img {
+    width: 150px;
+    height: 120px;
+}
+
+.comparison-chart-and-image {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; /* Center the content horizontally */
+}
+
+
+.comparison {
+    display: none;
+    flex-direction: column; /* Ensure content is in a column */
+    align-items: center;
+    margin-top: 20px;
+}
+
+.comparison-row {
+    display: flex; /* Ensure the row items are in a row */
+    justify-content: space-between;
+    width: 100%; /* Make sure the row takes the full width */
+    align-items: center;
+}
+
+.comparison-image-container {
+    display: flex;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+}
+
+#comparison-chart {
+    flex-grow: 1; /* Allow the chart to take up remaining space */
 }

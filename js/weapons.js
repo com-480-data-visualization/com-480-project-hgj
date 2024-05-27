@@ -66,17 +66,6 @@ const AVGweaponData = [
     { type:"h", attr:"mobility", max:225, min:150, avg:202.5}
 ];
 
-// Function to create weapon grid
-//function createWeaponGrid(containerId, weapons, chartContainerId, selectedImageId, chartId) {
-    //const grid = document.getElementById(containerId);
-    //weapons.forEach(weapon => {
-        //const img = document.createElement('img');
-        //img.src = weapon.image;
-        //img.alt = weapon.name;
-        //img.onclick = () => showChart(weapon, chartContainerId, selectedImageId, chartId);
-        //grid.appendChild(img);
-    //});
-//}
 function createWeaponGrid(containerId, weapons, chartContainerId, selectedImageId, chartId) {
     const grid = document.getElementById(containerId);
     weapons.forEach(weapon => {
@@ -91,7 +80,7 @@ function createWeaponGrid(containerId, weapons, chartContainerId, selectedImageI
         const name = document.createElement('div');
         name.className = 'weapon-name';
         name.innerText = weapon.name;
-
+        
         weaponContainer.appendChild(img);
         weaponContainer.appendChild(name);
         grid.appendChild(weaponContainer);
@@ -107,18 +96,7 @@ function showChart(weapon, chartContainerId, selectedImageId, chartId) {
 
 // Function to create bar chart
 function createBarChart(chartId, weapon) {
-    //const data = [
-        //{ attribute: 'Price', value: weapon.price },
-        //{ attribute: 'Kill Reward', value: weapon.kill_reward },
-        //{ attribute: 'Damage', value: weapon.damage },
-        //{ attribute: 'Armor Penetration(in %)', value: weapon.armor_pen },
-        //{ attribute: 'Fire Rate(RPM)', value: weapon.fire_rate },
-        //{ attribute: 'Accuracy Range(Static)', value: weapon.acc_range_stand },
-        //{ attribute: 'Mobility', value: weapon.mobility }
-    //];
-    //data.reverse();
 
-    //const data_attr_max = AVGweaponData.find(item => item.type === data.type);
     const weaponType = weapon.type;
     const normalize = (value, max, min) => 0.2 + 0.8 * ((value - min) / (max - min));
     const avg_normalize = (value, avg) => value/avg;
@@ -175,9 +153,9 @@ function createBarChart(chartId, weapon) {
         .attr("height", y.bandwidth())
         .attr("fill", d => {
             if (d.attribute === 'Price') {
-                return d.avg_normed > 1 ? "rgba(255, 0, 0, 0.5)" : d.avg_normed < 1 ? "rgba(0, 255, 0, 0.5)" : "rgba(255, 165, 0, 0.5)";
+                return d.avg_normed > 1 ? "rgba(200, 0, 0, 0.6)" : d.avg_normed < 1 ? "rgba(0, 120, 0, 0.6)" : "rgba(255, 165, 0, 0.6)";
             } else {
-                return d.avg_normed > 1 ? "rgba(0, 255, 0, 0.5)" : d.avg_normed < 1 ? "rgba(255, 0, 0, 0.5)" : "rgba(255, 165, 0, 0.5)";
+                return d.avg_normed > 1 ? "rgba(0, 120, 0, 0.6)" : d.avg_normed < 1 ? "rgba(200, 0, 0, 0.6)" : "rgba(255, 165, 0, 0.6)";
             }
         });
 
@@ -242,7 +220,6 @@ function createBarChart(chartId, weapon) {
         .style("font-size", "13px")
         .style("font-style", "italic")
         .style("font-weight", "bold");
-
 }
 
 
@@ -251,8 +228,190 @@ function goBack(section) {
     document.getElementById(`${section}ChartContainer`).style.display = 'none';
 }
 
+function createComparison(weapon1ID, weapon2ID, comparebuttonID){
+    document.addEventListener('DOMContentLoaded', () => {
+    const weapon1Select = document.getElementById(weapon1ID);
+    const weapon2Select = document.getElementById(weapon2ID);
+    const weapon1Image = document.getElementById('weapon1Image');
+    const weapon2Image = document.getElementById('weapon2Image');
+    const compareButton = document.getElementById('compareButton');
+    const comparisonSection = document.getElementById('comparisonChartContainer');
+
+    // Populate the dropdowns with weapon options
+    weaponData.forEach(weapon => {
+        const option1 = document.createElement('option');
+        option1.value = weapon.id;
+        option1.textContent = weapon.name;
+        weapon1Select.appendChild(option1);
+
+        const option2 = document.createElement('option');
+        option2.value = weapon.id;
+        option2.textContent = weapon.name;
+        weapon2Select.appendChild(option2);
+    });
+
+    // Add event listener for the compare button
+    compareButton.addEventListener('click', () => {
+        const weapon1Id = parseInt(weapon1Select.value);
+        const weapon2Id = parseInt(weapon2Select.value);
+
+        if (isNaN(weapon1Id) || isNaN(weapon2Id)) {
+            alert('Please select two weapons to compare');
+            return;
+        }
+
+        const weapon1 = weaponData.find(w => w.id === weapon1Id);
+        const weapon2 = weaponData.find(w => w.id === weapon2Id);
+
+        // Update weapon images
+        weapon1Image.src = weapon1.image;
+        weapon2Image.src = weapon2.image;
+
+        // Show the comparison section
+        comparisonSection.style.display = 'flex';
+
+        // Create the comparison chart
+        createCompareChart(weapon1, weapon2);
+    });
+});
+}
+
+function createCompareChart(weapon1,weapon2){
+
+    const chartContainer = document.getElementById('comparison-chart');
+    chartContainer.innerHTML = '';  // Clear any existing chart
+    const margin = { top: 20, right: 50, bottom: 30, left: 200 };
+    const width = 600 - margin.left - margin.right;
+    const height = 300 - margin.top - margin.bottom;
+
+    const avg_normalize = (value, avg) => value/avg;
+    const data = [
+        { name: 'Price', w1_value: weapon1.price, w2_value: weapon2.price, w1_normed: -avg_normalize(weapon1.price, 1654.84), w2_normed: -avg_normalize(weapon2.price, 1654.84)},
+        { name: 'Kill Reward', w1_value: weapon1.kill_reward, w2_value: weapon2.kill_reward, w1_normed: avg_normalize(weapon1.kill_reward, 419.35), w2_normed: avg_normalize(weapon2.kill_reward, 419.35)},
+        { name: 'Damage', w1_value: weapon1.damage, w2_value: weapon2.damage, w1_normed: avg_normalize(weapon1.damage, 36.52), w2_normed: avg_normalize(weapon2.damage, 36.52)},
+        { name: 'Armor Penetration(in %)', w1_value: weapon1.armor_pen, w2_value: weapon2.armor_pen, w1_normed: avg_normalize(weapon1.armor_pen, 71.29), w2_normed: avg_normalize(weapon2.armor_pen, 71.29)},
+        { name: 'Fire Rate(RPM)', w1_value: weapon1.fire_rate, w2_value: weapon2.fire_rate, w1_normed: avg_normalize(weapon1.fire_rate, 502.68), w2_normed: avg_normalize(weapon2.fire_rate, 502.68)},
+        { name: 'Accuracy Range(Static)', w1_value: weapon1.acc_range_stand, w2_value: weapon2.acc_range_stand, w1_normed: avg_normalize(weapon1.acc_range_stand, 18.46), w2_normed: avg_normalize(weapon2.acc_range_stand, 18.46)},
+        { name: 'Mobility', w1_value: weapon1.mobility, w2_value: weapon2.mobility, w1_normed: avg_normalize(weapon1.mobility, 224.52), w2_normed: avg_normalize(weapon2.mobility, 224.52)}
+    ];
+    //data.reverse();
+
+
+    const svg = d3.select(chartContainer).append('svg')
+        .attr('width', width + margin.left + margin.right)
+        .attr('height', height + margin.top + margin.bottom)
+        .append('g')
+        .attr('transform', `translate(${margin.left},${margin.top})`);
+
+    const y = d3.scaleBand()
+        .domain(data.map(d => d.name))
+        .range([0, height])
+        .padding(0.1);
+
+    const x = d3.scaleLinear()
+        //.domain([0, d3.max(data, d => Math.max(d.w1_normed, d.w2_normed))])
+        .domain([0, d3.max(data, d => Math.abs(d.w1_normed - d.w2_normed))])
+        .nice()
+        .range([0, width / 2]);
+
+    svg.append('g')
+        .selectAll('.label')
+        .data(data)
+        .enter()
+        .append('text')
+        .attr('x', -10)
+        .attr('y', d => y(d.name) + y.bandwidth() / 2)
+        .attr('dy', '0.35em')
+        .attr('text-anchor', 'end')
+        .style("font-style", "italic")
+        .style("font-size", "12px")  // Adjust the font size as needed
+        .style("font-weight", "bold")
+        .text(d => d.name);
+
+    const barGroup = svg.append('g')
+        .attr('transform', `translate(${width / 2},0)`);
+
+    // Add bars for weapon1 and weapon2 based on the difference
+    barGroup.append('g')
+        .selectAll('.bar.left')
+        .data(data)
+        .enter()
+        .append('rect')
+        .attr('class', 'bar left') // Class for styling
+        .attr('x', d => d.w1_normed > d.w2_normed ? -x(Math.abs(d.w1_normed - d.w2_normed)) : 0) // Position left bars to the left of the center axis
+        .attr('y', d => y(d.name)) // Align bars with y-axis
+        .attr('width', d => d.w1_normed > d.w2_normed ? x(Math.abs(d.w1_normed - d.w2_normed)) : 0) // Set width to the absolute difference
+        .attr('height', y.bandwidth()) // Set bar height
+        .attr('fill', 'rgba(0, 120, 0, 0.6)'); 
+
+    barGroup.append('g')
+        .selectAll('.bar.right')
+        .data(data)
+        .enter()
+        .append('rect')
+        .attr('class', 'bar right') // Class for styling
+        .attr('x', d => d.w2_normed > d.w1_normed ? 0 : -x(Math.abs(d.w2_normed - d.w1_normed))) // Position right bars to the right of the center axis
+        .attr('y', d => y(d.name)) // Align bars with y-axis
+        .attr('width', d => d.w2_normed > d.w1_normed ? x(Math.abs(d.w2_normed - d.w1_normed)) : 0) // Set width to the absolute difference
+        .attr('height', y.bandwidth()) // Set bar height
+        .attr('fill', 'rgba(0, 120, 0, 0.6)'); 
+
+    svg.append('g')
+        .attr('transform', `translate(${width / 2},0)`)
+        .call(d3.axisLeft(y).tickSize(0).tickFormat(''))
+        .select('.domain').remove();
+
+    barGroup.append('line')
+        .attr('x1', 0)
+        .attr('x2', 0)
+        .attr('y1', 0)
+        .attr('y2', height)
+        .attr('stroke', '#000');
+
+    // Add value labels for weapon1 (left side)
+    svg.append('g')
+        .selectAll('.value.left')
+        .data(data)
+        .enter()
+        .append('text')
+        .attr('class', 'value left') // Class for styling
+        .attr('x', width / 2 - 40) // Position text slightly to the right of the left margin
+        .attr('y', d => y(d.name) + y.bandwidth() / 2) // Center text vertically within the band
+        .attr('dy', '0.35em') // Adjust vertical alignment
+        .attr('text-anchor', 'start') // Align text to the start (left)
+        .style('font-size', '10px') // Set the font size to make it smaller
+        .text(d => d.w1_value); // Set text to the weapon1 values
+
+    // Add value labels for weapon2 (right side)
+    svg.append('g')
+        .selectAll('.value.right')
+        .data(data)
+        .enter()
+        .append('text')
+        .attr('class', 'value right') // Class for styling
+        .attr('x', width / 2 + 15) // Position text slightly to the right of the center axis
+        .attr('y', d => y(d.name) + y.bandwidth() / 2) // Center text vertically within the band
+        .attr('dy', '0.35em') // Adjust vertical alignment
+        .attr('text-anchor', 'start') // Align text to the start (left)
+        .style('font-size', '10px') // Set the font size to make it smaller
+        .text(d => d.w2_value); // Set text to the weapon2 values
+
+    // Add text below the bar chart
+    svg.append("text")
+        .attr("x", width / 2)
+        .attr("y", height + 15) // Adjust the y position as needed
+        .attr("text-anchor", "middle")
+        .text("Green bars denote better performance")
+        .style("font-size", "13px")
+        .style("font-style", "italic")
+        .style("font-weight", "bold");
+}
+    
+
 // Create grids for each section
 createWeaponGrid('pistolsGrid', weaponData.filter(w => w.id >= 1 && w.id <= 9), 'pistolsChartContainer', 'pistolsSelectedImage', 'pistolsChart');
 createWeaponGrid('SMGsGrid', weaponData.filter(w => w.id >= 10 && w.id <= 16), 'SMGsChartContainer', 'SMGsSelectedImage', 'SMGsChart');
 createWeaponGrid('RiflesGrid', weaponData.filter(w => w.id >= 17 && w.id <= 25), 'RiflesChartContainer', 'RiflesSelectedImage', 'RiflesChart');
 createWeaponGrid('HeaviesGrid', weaponData.filter(w => w.id >= 26 && w.id <= 31), 'HeaviesChartContainer', 'HeaviesSelectedImage', 'HeaviesChart');
+
+createComparison('weapon1','weapon2','compareButton');

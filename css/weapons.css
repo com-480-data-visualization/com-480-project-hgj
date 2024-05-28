@@ -68,6 +68,11 @@ h1, h2 {
     height: 150px; /* Increased height of static images */
 }
 
+#weapon1Image, #weapon2Image{
+    width: 180px;
+    height: 150px; /* Increased height of static images */
+}
+
 .back-button {
     margin-top: 20px;
     padding: 10px 20px;
@@ -100,8 +105,8 @@ button {
 
 
 .comparison-image-container img {
-    width: 150px;
-    height: 120px;
+    width: 180px;
+    height: 150px;
 }
 
 .comparison-chart-and-image {
@@ -135,4 +140,17 @@ button {
 
 #comparison-chart {
     flex-grow: 1; /* Allow the chart to take up remaining space */
+}
+
+/* Tooltip styling */
+.tooltip {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
 }

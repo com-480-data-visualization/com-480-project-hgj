@@ -254,49 +254,54 @@
           <div class="viz2-section-title-ctr section-title-ctr">
             <h2 class="viz2-section-title section-title">Weapon Statistics and Comparison</h2>
             <p class="viz2-section-subtitle">
-              This second visualization shows the statistics (version updated on April 25, 2024) of different weapons available in CS2. You can also select two weapons to compare them.
+              This section shows the statistics (version updated on April 25, 2024) of different weapons available in CS2. Click on the weapon that you are interested in and you can find details about it. There's also an agent you can play with: Enter the shooting distance, then put your mouse on different body part of the agent. The corresponding damage done by the selected weapon will be shown. Below the four weapon categories, there's also a sub-section for you to compare any two of the weapons.
             </p>
           </div>
 
+          <div class="vis_2">
           <div class="weapon-section">
-          <h2>Pistols</h2>
+          <h2 style="text-align: center;">Pistols</h2>
           <div class="grid" id="pistolsGrid"></div>
           <div class="chart-container" id="pistolsChartContainer">
           <div class="chart-and-image">
             <img id="pistolsSelectedImage" src="" alt="Weapon Image" width="140" height="100">
             <div id="pistolsChart"></div>
             <img id="PistolsStaticImage" src="images/weapons/agent.png" alt="Static Image" width="100" height="140">
+            <input type="number" id="PistolsInput" style="width: 70px; text-align: right;"aria-label="Pistols_in"value="10">m
             </div>
-          <button class="back-button" onclick="goBack('pistols')">Hide</button>
+            <button class="back-button" onclick="goBack('pistols')">Hide</button>
+            
           </div>
           </div>
           
           <div class="weapon-section">
-            <h2>SMGs</h2>
+            <h2 style="text-align: center;">SMGs</h2>
             <div class="grid" id="SMGsGrid"></div>
             <div class="chart-container" id="SMGsChartContainer">
               <div class="chart-and-image">
                 <img id="SMGsSelectedImage" src="" alt="Weapon Image" width="140" height="100">
                 <div id="SMGsChart"></div>
                 <img id="SMGsStaticImage" src="images/weapons/agent.png" alt="Static Image" width="100" height="140">
+                <input type="number" id="SMGsInput" style="width: 70px; text-align: right;"aria-label="SMGs_in"value="10">m
               </div>
                 <button class="back-button" onclick="goBack('SMGs')">Hide</button>
             </div>
           </div>
           <div class="weapon-section">
-            <h2>Rifles</h2>
+            <h2 style="text-align: center;">Rifles</h2>
             <div class="grid" id="RiflesGrid"></div>
             <div class="chart-container" id="RiflesChartContainer">
               <div class="chart-and-image">
                 <img id="RiflesSelectedImage" src="" alt="Weapon Image" width="140" height="100">
                 <div id="RiflesChart"></div>
                 <img id="RiflesStaticImage" src="images/weapons/agent.png" alt="Static Image" width="100" height="140">
+                <input type="number" id="RiflesInput" style="width: 70px; text-align: right;"aria-label="Rifles_in"value="10">m
               </div>
                 <button class="back-button" onclick="goBack('Rifles')">Hide</button>
             </div>
           </div>
           <div class="weapon-section">
-            <h2>Heavies</h2>
+            <h2 style="text-align: center;">Heavies</h2>
             <p class="viz2-section-explanation">
               The damage of Shotguns (MAG-7, Nova, Sawed-Off, XM1014) displayed here is only the damage for one bullet. The actual damage depends on the number of bullets fired per shot and the random spread of bullets.
             </p>
@@ -306,12 +311,13 @@
                 <img id="HeaviesSelectedImage" src="" alt="Weapon Image" width="140" height="100">
                 <div id="HeaviesChart"></div>
                 <img id="HeaviesStaticImage" src="images/weapons/agent.png" alt="Static Image" width="100" height="140">
+                <input type="number" id="HeaviesInput" style="width: 70px; text-align: right;"aria-label="Heavies_in"value="10">m
               </div>
                 <button class="back-button" onclick="goBack('Heavies')">Hide</button>
             </div>
           </div>
 
-          <h2>Weapon Comparison</h2>
+          <h2 style="text-align: center;">Weapon Comparison</h2>
           <div class="comparison-container">
             <div class="selector">
               <label for="weapon1">Select Weapon 1:</label>
@@ -340,7 +346,7 @@
           </div>
           <button class="back-button" id="compareHide" onclick="goBack('comparison')">Hide</button>
           </div>
-
+        </div>
         </div>
       </div>
       <div class="row row-viz3" id="row-viz3">

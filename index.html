@@ -32,9 +32,7 @@
               <div class="nav-link" id="nav-link-section-1">WELCOME</div>
               <div class="nav-link" id="nav-link-section-2">TOP 10</div>
               <div class="nav-link" id="nav-link-section-3">WEAPONS</div>
-              <div class="nav-link" id="nav-link-section-4">
-                VISUALIZATION-III
-              </div>
+              <div class="nav-link" id="nav-link-section-4">MAP STATISTICS</div>
             </div>
           </div>
         </div>
@@ -353,11 +351,17 @@
         <div class="inner-row inner-row-viz3">
           <div class="viz3-section-title-ctr">
             <h2 class="viz3-section-title section-title">Map Statistics</h2>
+            <p class="viz3-section-subtitle">
+              This section presents a bubble plot showing the win rates of each competition team as T-side and CT-side in CSGO matches on each map from 2015 to 2020. Each bubble represents a map, with the bubble size indicating the number of matches played by the team on that map. You can select a team of interest or search for the team name directly, and use the slider to choose the data for the years you are interested in. Some teams may not have competed every year, so if the bubble chart is empty, it means the team did not compete in the selected years.
+            </p>
           </div>
           <section class="controls">
+            <label for="search-bar">Search for a team:</label>
+            <input type="text" id="search-bar" placeholder="Type to search...">
             <label for="team-select">Select Team:</label>
             <div class="custom-select">
               <select id="team-select">
+                <option value="" disabled selected>Select the team</option>
               </select>
             </div>
           </section>
@@ -371,7 +375,8 @@
           </section>
           <section class="ban-rate">
               <h3>Most Disliked Maps</h3>
-              <ul id="ban-list"></ul>
+              <div id="map-container">
+              </div>
           </section>
         </div>
       </div>

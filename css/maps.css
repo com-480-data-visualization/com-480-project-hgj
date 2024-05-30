@@ -5,3 +5,50 @@
     position: relative;
     display: inline-block;
 }
+
+.viz3-section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px; 
+    text-align: center; 
+}
+
+.viz3-section-subtitle {
+    font-size: 16px;
+    font-weight: normal;
+    color: #000000; 
+    text-align: center; 
+    margin-top: 0;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px; 
+}
+
+.controls label {
+    margin-top: 10px;
+}
+
+#search-bar {
+    width: 15%;
+    padding: 5px;
+    margin-bottom: 10px; 
+    box-sizing: border-box;
+}
+
+#team-select {
+    width: 15%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.bubbles {
+    stroke-width: 2px;
+    stroke: white;
+}
+
+.bubbles:hover {
+stroke: grey;
+}

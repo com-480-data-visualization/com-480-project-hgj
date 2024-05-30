@@ -292,10 +292,15 @@ body{
 --------------------------------- */
 
 .viz3-section-title-ctr{
-    display:flex;
-    align-items: center;
-    justify-content:center;
+    margin-top:40px;
+    flex-direction: column;
 }
+
+.viz3-section-subtitle{
+    text-align: center;
+    font-family: lgc-regular;
+}
+
 
 .inner-row-viz3{
 
@@ -315,7 +320,7 @@ body{
     justify-content: center;
 
     background-color: #ffffff;
-    color:white;
+    color:rgb(255, 255, 255);
     font-family: montserrat-regular;
 }
 

@@ -31,6 +31,13 @@
     margin-top: 10px;
 }
 
+#my_dataviz {
+    background-color: rgb(250, 250, 250);
+    padding: 20px;  
+    border-radius: 30px; 
+    margin-bottom: 30px;
+}
+
 #search-bar {
     width: 15%;
     padding: 5px;
@@ -42,6 +49,7 @@
     width: 15%;
     padding: 10px;
     box-sizing: border-box;
+    margin-bottom: 30px;
 }
 
 .bubbles {

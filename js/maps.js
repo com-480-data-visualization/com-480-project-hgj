@@ -9,7 +9,7 @@ slider.addEventListener("input", function() {
 });
 
 // add teams' names
-fetch("/com-480-project-hgj/data/map_statistics.json")
+fetch("/com-480-project-hgj/data/teams_over_100_matches.json")
   .then((response) => response.json())
   .then((summary) => {
 
@@ -47,7 +47,7 @@ fetch("/com-480-project-hgj/data/map_statistics.json")
 .then(response => response.json())
 .then((summary) => {
     // update visualization based on initial selection
-    document.getElementById('team-select').value = '100 Thieves'
+    document.getElementById('team-select').value = 'Liquid'
     const selectedTeam = document.getElementById('team-select').value;
     const selectedYear = document.getElementById('year-slider').value;
     updateBubblePlot(summary, selectedYear, selectedTeam);
@@ -246,7 +246,7 @@ function createBubblePlot(data) {
 const mapContainer = document.getElementById('map-container');
 
 // read disliked maps' data
-fetch('data/most_disliked_maps.json')
+fetch('/com-480-project-hgj/data/most_disliked_maps.json')
 .then(response => response.json())
 .then((dismap) => {
 

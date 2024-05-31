@@ -78,7 +78,6 @@ And the skeleton is published on GitHub Pages with this URL: [https://com-480-da
 
 ## Milestone 3 (31st May, 5pm)
 
-**80% of the final grade**
 Our Screencast is [here](https://www.youtube.com/watch?v=66_kw5B6rMk)
 
 ## Late policy

@@ -78,7 +78,11 @@ And the skeleton is published on GitHub Pages with this URL: [https://com-480-da
 
 ## Milestone 3 (31st May, 5pm)
 
-Our Screencast is [here](https://www.youtube.com/watch?v=66_kw5B6rMk)
+> - Our final website can be found [here](https://com-480-data-visualization.github.io/com-480-project-hgj/)
+
+> - Our Screencast is [here](https://www.youtube.com/watch?v=66_kw5B6rMk)
+
+> - The process book is available [here]()
 
 ## Late policy
 
